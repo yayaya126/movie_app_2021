@@ -17,17 +17,17 @@ class Home extends React.Component {
       "https://yts-proxy.now.sh/list_movies.json?sort_by=rating"
     );
     this.setState({ movies, isLoading: false });
-  }
+  };
   componentDidMount() {
     this.getMovies();
   }
   render() {
     const { isLoading, movies } = this.state;
     return (
-      <section className="container" >
+      <section className="container">
         {isLoading ? (
           <div className="loader">
-              <span className="loader_text">Loading...</span>
+            <span className="loader__text">Loading...</span>
           </div>
         ) : (
           <div className="movies">
@@ -45,7 +45,7 @@ class Home extends React.Component {
           </div>
         )}
       </section>
-    )
+    );
   }
 }
 
