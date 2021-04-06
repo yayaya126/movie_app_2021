@@ -1,9 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+import logo from './asdf.jpg';
 import "./Movie.css";
+import { getElementError } from "@testing-library/dom";
+
 
 function Movie({ id, year, title, summary, poster, genres }) {
+  console.log(poster);
+
   return (
     <div className="movie">
       <Link
@@ -18,7 +23,22 @@ function Movie({ id, year, title, summary, poster, genres }) {
           }
         }}
       >
-        <img src={poster} alt={title} title={title} />
+        {{poster} ? (console.log('asd')) : (<span>123</span>)}
+        <img src={poster} alt={title} title={title} onError={(e) => {
+          console.log(e);
+          if (e.type == "error") {
+            console.log(e.type);
+            e.target.removeAttribute("src");
+            e.target.setAttribute("style","background-image: url("+ {logo} +")");
+          } else {
+            console.log("정상");
+          }
+          console.log(e);
+          // e.target.setAttribute("style","width:150px; height:225px; background:black");
+          // e.target.removeAttribute("alt");
+          // e.target.removeAttribute("title"); 
+        }} />
+        <img src={logo} />
         <div className="movie__data">
           <h3 className="movie__title">{title}</h3>
           <h5 className="movie__year">{year}</h5>

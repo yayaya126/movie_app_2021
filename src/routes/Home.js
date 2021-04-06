@@ -8,6 +8,7 @@ class Home extends React.Component {
     isLoading: true,
     movies: []
   };
+
   getMovies = async () => {
     const {
       data: {
@@ -18,9 +19,12 @@ class Home extends React.Component {
     );
     this.setState({ movies, isLoading: false });
   };
+
   componentDidMount() {
     this.getMovies();
-  }
+  };
+  
+
   render() {
     const { isLoading, movies } = this.state;
     return (
