@@ -27,6 +27,7 @@ class Home extends React.Component {
 
   render() {
     const { isLoading, movies } = this.state;
+    console.log(movies);
     return (
       <section className="container">
         {isLoading ? (
@@ -35,6 +36,8 @@ class Home extends React.Component {
           </div>
         ) : (
           <div className="movies">
+            {/* (주의) iframe 태그 : 현재 페이지에 또다른 페이지를 포함하도록 해준다. (유사 embed 태그, object 태그) iframe 태그는 연결 불가 이슈 */}
+            {/* <object type="text/html" width="100%" height="700" data="//www.youtube.com/embed/MJ6oZLQOzFA"></object> */}
             {movies.map(movie => (
               <Movie
                 key={movie.id}

@@ -1,4 +1,22 @@
-.movies .movie {
+.movie {
+  width: 15%;
+  table-layout: fixed;
+}
+
+.movie_title {
+  font-size: medium;
+  color: white;
+  margin: 5px 0px 10px 0px;
+  overflow: hidden;
+}
+
+.movie img {
+  width: auto;
+  height: 300px;
+  border-radius: 5%;
+}
+
+/* .movies .movie {
   width: 45%;
   background-color: white;
   margin-bottom: 70px;
@@ -52,4 +70,4 @@
 .movie .movie__year {
   margin-right: 10px;
   font-size: 14px;
-}
+} */
