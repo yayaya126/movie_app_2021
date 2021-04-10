@@ -10,7 +10,9 @@ function Movie({ id, year, title, summary, poster, genres }) {
     <div className="movie">
       <Link to={{ pathname: `/movie/${id}`, state: {year, title, summary, poster, genres} }}>
         <img src={poster} alt={title} title={title} ></img>
-        <h4 className="movie_title">{title}</h4>
+        <h4 className="movie_titl" onClick={(e) => {
+          window.location.href = "https://www.youtube.com/results?search_query=" + e.target.innerText;
+        }} >{title}</h4>
       </Link>
     </div>
   );
