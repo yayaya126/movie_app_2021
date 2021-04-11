@@ -2,34 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import "./Movie.css";
-import { getElementError } from "@testing-library/dom";
 
 
 function Movie({ id, year, title, summary, poster, genres }) {
-  return (
-    <div className="movie">
-      <Link to={{ pathname: `/movie/${id}`, state: {year, title, summary, poster, genres} }}>
-        <img src={poster} alt={title} title={title} ></img>
-        <h4 className="movie_titl" onClick={(e) => {
-          window.location.href = "https://www.youtube.com/results?search_query=" + e.target.innerText;
-        }} >{title}</h4>
-      </Link>
-    </div>
-  );
-}
-
-Movie.propTypes = {
-  id: PropTypes.number.isRequired,
-  year: PropTypes.number.isRequired,
-  title: PropTypes.string.isRequired,
-  summary: PropTypes.string.isRequired,
-  poster: PropTypes.string.isRequired,
-  genres: PropTypes.arrayOf(PropTypes.string).isRequired
-};
-
-export default Movie;
-
-/*
   return (
     <div className="movie">
       <Link
@@ -44,7 +19,7 @@ export default Movie;
           }
         }}
       >
-        <img src={poster} alt={title} title={title} ></img>
+        <img src={poster} alt={title} title={title} />
         <div className="movie__data">
           <h3 className="movie__title">{title}</h3>
           <h5 className="movie__year">{year}</h5>
@@ -60,4 +35,27 @@ export default Movie;
       </Link>
     </div>
   );
-*/
+}
+// function Movie({ id, year, title, summary, poster, genres }) {
+//   console.log('asdf');
+//   return (
+//     // <Link to={{ pathname: `/movie/${id}`, state: {year, title, summary, poster, genres} }}>
+//     <Link to={`/movie/${id}`} className="thumbnail">
+//       <img src={poster} alt={title} title={title} ></img>
+//       <h4 className="movie_title" onClick={(e) => {
+//         window.location.href = "https://www.youtube.com/results?search_query=" + e.target.innerText;
+//       }} >{title}</h4>
+//     </Link>
+//   );
+// }
+
+Movie.propTypes = {
+  id: PropTypes.number.isRequired,
+  year: PropTypes.number.isRequired,
+  title: PropTypes.string.isRequired,
+  summary: PropTypes.string.isRequired,
+  poster: PropTypes.string.isRequired,
+  genres: PropTypes.arrayOf(PropTypes.string).isRequired
+};
+
+export default Movie;

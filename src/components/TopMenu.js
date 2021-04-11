@@ -6,10 +6,9 @@ function TopMenu() {
     return (
         <div className="topMenu">
             <div className="topMenu_container">
-                <img id="topMenu_logo" src={process.env.PUBLIC_URL + "/logo192.png"}></img>
+                <img id="topMenu_logo" src={process.env.PUBLIC_URL + "/logo192.png"} alt="a"></img>
                 <div className="topMenu_menu">
                     <Link to="/">Home</Link>
-                    <Link to="/about">About</Link>
                     <Link to="/movie">Movies</Link>
                     <Link to="/about">Series</Link>
                     <Link to="/about">News</Link>

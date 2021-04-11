@@ -1,5 +1,12 @@
-.detail {
-    width: 100%;
-    height: auto;
+* {
     background-color: black;
+}
+
+.movie-page {
+    width:100%;
+}
+
+.asdf {
+    font-size: large;
+    color: white;
 }
